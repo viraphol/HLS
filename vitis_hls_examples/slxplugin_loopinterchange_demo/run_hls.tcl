@@ -26,7 +26,9 @@ proc ::request_solution {name clock_period descr} {
   puts "SOLUTION $name: $descr (clock: $clock_period)"
   open_solution -reset $name
   # Define technology and clock rate
-  set_part  {xcvu9p-flga2104-2-i}
+  # set_part  {xcvu9p-flga2104-2-i}
+  set_part {xc7k160tfbv676-2}
+
   create_clock -period $clock_period
 }
 

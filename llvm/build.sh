@@ -41,7 +41,7 @@ EXTRA_SRC_DIR="$llvmdir/clang-tools-extra"
 #NOTE: CMake 3.4.3 or higher is required
 #NOTE: Can replace with 'ninja' if it's install with "cmake -G Ninja"
 #NOTE: -DLLVM_ENABLE_DOXYGEN and -DLLVM_BUILD_DOCS are for doxygen documentation.
-cmake "$LLVM_SRC_DIR" \
+cmake "$LLVM_SRC_DIR" -G Ninja\
 	-DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX \
 	-DLLVM_EXTERNAL_CLANG_SOURCE_DIR=$CLANG_SRC_DIR \
 	-DLLVM_EXTERNAL_CLANG_TOOLS_EXTRA_SOURCE_DIR=$EXTRA_SRC_DIR \
@@ -50,7 +50,9 @@ cmake "$LLVM_SRC_DIR" \
         -DCMAKE_BUILD_TYPE="Debug"
 
 #NOTE: Use 'ninja' if you have it!:-)
-make -j $(nproc)
+#make -j $(nproc)
+#ninja -j $(nproc)
+ninja -j 1
 
 #Build documentation
 #make doxygen

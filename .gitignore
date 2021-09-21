@@ -3,3 +3,5 @@
 *.o
 *.log
 push_github.sh
+llvm/hls-build/
+vitis_hls_examples/slxplugin_loopinterchange_demo/proj.slxopts

@@ -32,7 +32,9 @@ set_top example
 open_solution -reset solution1
 
 # Set the target device
-set_part "virtex7"
+# set_part "virtex7"
+set_part {xc7k160tfbv676-2}
+
 
 # Create a virtual clock for the current solution
 create_clock -period "300MHz"
